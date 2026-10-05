@@ -1,0 +1,23 @@
+{
+  "geo_libraries": 54,
+  "unique_donors": 48,
+  "donor_groups": {
+    "T2D": 17,
+    "ND": 17,
+    "PD": 14
+  },
+  "pooled_libraries": 12,
+  "single_donor_libraries": 42,
+  "listed_geo_files": 162,
+  "chemistry_library_counts": {
+    "V2": 12,
+    "V3": 42
+  },
+  "expression_payloads_inspected": false,
+  "source_sha256": {
+    "cellxgene.json": "83b757144e5ee0bea87b12c30949deafee4b6e80ec2240a8996b759533ed72e4",
+    "samples.txt": "f6717fd160c61b663f7f69ca725efc7f09e5a0c07ece01f465e574e7e1055d1b",
+    "series.txt": "a58b26277f64333595e82f0ed7a24648424b8104acb6b81fa62a43e2ecd5d3b0",
+    "zenodo.json": "2f80bd4401d7768d98d63dd8504708c400616dc110d4f39725d97948a693fd4a"
+  }
+}

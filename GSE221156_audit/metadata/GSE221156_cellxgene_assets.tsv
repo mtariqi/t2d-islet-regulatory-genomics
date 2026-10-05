@@ -1,0 +1,5 @@
+dataset_id	title	cell_count	file_type	byte_size	url	payload_status
+e51bae9a-c747-4b64-904a-4da7cda218ab	Integrated transcriptomes of the 14 pancreatic islet cell types	245878	H5AD	5868428962	https://datasets.cellxgene.cziscience.com/464a2c70-ebab-48c2-818d-be44c0a9c29e.h5ad	not_downloaded_or_inspected
+a19438aa-ef9a-4e9b-abb6-5a1357123bb8	Reintegrated transcriptomes of Alpha pancreatic islet cells	74812	H5AD	1611117039	https://datasets.cellxgene.cziscience.com/bf1557d3-3bab-4130-97bf-0777f98b5f7f.h5ad	not_downloaded_or_inspected
+7e9bde96-b4d1-43d3-a5fe-dde6c4a6dc47	Reintegrated transcriptomes of Delta pancreatic islet cells	10770	H5AD	226349221	https://datasets.cellxgene.cziscience.com/480481e3-99fa-4bba-83f9-5efc208c7a57.h5ad	not_downloaded_or_inspected
+6d452161-70af-43dd-988c-e3c4050d31e8	Reintegrated transcriptomes of Beta pancreatic islet cells	99029	H5AD	2477777480	https://datasets.cellxgene.cziscience.com/faacd98e-af54-459d-8a7a-74427766bc81.h5ad	not_downloaded_or_inspected

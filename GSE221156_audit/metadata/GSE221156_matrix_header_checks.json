@@ -1,0 +1,32 @@
+[
+  {
+    "gsm": "GSM6846488",
+    "library_id": "MS17001",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6846nnn/GSM6846488/suppl/GSM6846488_MS17001_matrix.mtx.gz",
+    "http_content_length": "45954747",
+    "header_lines": [
+      "%%MatrixMarket matrix coordinate integer general",
+      "%",
+      "36601 5381 14713536",
+      "27 1 1",
+      "30 1 3",
+      "31 1 2"
+    ],
+    "status": "header_only_no_full_count_validation"
+  },
+  {
+    "gsm": "GSM6846505",
+    "library_id": "MS19006",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6846nnn/GSM6846505/suppl/GSM6846505_MS19006_matrix.mtx.gz",
+    "http_content_length": "49725898",
+    "header_lines": [
+      "%%MatrixMarket matrix coordinate integer general",
+      "%",
+      "36601 5901 16065554",
+      "17 1 1",
+      "171 1 1",
+      "378 1 1"
+    ],
+    "status": "header_only_no_full_count_validation"
+  }
+]
