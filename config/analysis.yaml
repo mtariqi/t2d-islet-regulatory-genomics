@@ -1,0 +1,18 @@
+project: t2d-islet-regulatory-genomics
+status: planning
+species: Homo_sapiens
+
+expression:
+  primary_dataset: GSE221156
+  cell_type: beta
+  primary_comparison: T2D_vs_ND
+  fdr: 0.05
+  proposed_min_cells_per_donor: 50
+
+genetics:
+  harmonized_genome_build: null
+  coloc_h4_threshold: 0.80
+  require_prior_sensitivity: true
+
+reproducibility:
+  seed: 20261004
