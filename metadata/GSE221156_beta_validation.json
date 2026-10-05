@@ -1,0 +1,58 @@
+{
+  "n_cells": 99029,
+  "observed_islets": 48,
+  "observed_donor_ids": 48,
+  "missing_expected_islets": [],
+  "observed_cell_types": {
+    "type B pancreatic cell": 99029
+  },
+  "metadata_problems": {
+    "islets_with_multiple_donor_ids": 0,
+    "donor_ids_with_multiple_islets": 0,
+    "islets_with_multiple_disease_states": 0,
+    "duplicate_cell_ids": 0
+  },
+  "matrices": {
+    "X": {
+      "shape": [
+        99029,
+        26936
+      ],
+      "stored_values": 337547507,
+      "dtype": "float32",
+      "nonfinite_values": 0,
+      "negative_values": 0,
+      "fractional_values": 336651449,
+      "invalid_column_indices": 0,
+      "minimum_stored_value": 0.0,
+      "maximum_stored_value": 8.916439056396484,
+      "sum_stored_values": 230256289.83823442,
+      "passes_numeric_count_checks": false,
+      "count_provenance_confirmed": false,
+      "n_feature_ids": 26936,
+      "duplicate_feature_ids": 0,
+      "shape_matches_metadata": true
+    },
+    "raw/X": {
+      "shape": [
+        99029,
+        26936
+      ],
+      "stored_values": 337547507,
+      "dtype": "float32",
+      "nonfinite_values": 0,
+      "negative_values": 0,
+      "fractional_values": 0,
+      "invalid_column_indices": 0,
+      "minimum_stored_value": 0.0,
+      "maximum_stored_value": 16025.0,
+      "sum_stored_values": 2081765364.0,
+      "passes_numeric_count_checks": true,
+      "count_provenance_confirmed": false,
+      "n_feature_ids": 26936,
+      "duplicate_feature_ids": 0,
+      "shape_matches_metadata": true
+    }
+  },
+  "metadata_pass": true
+}
