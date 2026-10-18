@@ -1,0 +1,57 @@
+
+=== PHASE 8 VALIDATION AUDIT ===
+Primary tested genes: 17352 
+Unique Ensembl IDs: 17352 
+Consensus pathways: 676 
+
+Consensus pathways by collection:
+
+   GO_BP Reactome 
+     383      293 
+
+Enrichment direction:
+          direction
+collection Negative Positive
+  GO_BP         307       76
+  Reactome      284        9
+
+Agreement in NES across all tested pathways:
+GO_BP Pearson r = 0.9597 
+Reactome Pearson r = 0.9689 
+
+Primary contrast direction check:
+       gene_symbol DESeq2_log2FC edgeR_log2FC
+1  ENSG00000241860   -0.21713473  -0.20928845
+2  ENSG00000286448    0.45644300   0.46777941
+3        LINC01409   -0.17046153  -0.16990936
+4        LINC01128    0.09232580   0.09230105
+5        LINC00115    0.39940026   0.40542656
+6           FAM41C    0.09461874   0.14576757
+7        LINC02593    0.50250457   0.47334667
+8           SAMD11    0.14493441   0.14650787
+9            NOC2L    0.01279176   0.01333481
+10          KLHL17   -0.03943798  -0.06539424
+
+Top 10 positive consensus pathways:
+ collection                                                   pathway
+      GO_BP                                     GOBP_SYNAPSE_ASSEMBLY
+   Reactome                               REACTOME_POTASSIUM_CHANNELS
+      GO_BP                                     GOBP_ACTION_POTENTIAL
+      GO_BP                           GOBP_SENSORY_SYSTEM_DEVELOPMENT
+   Reactome                               REACTOME_MUSCLE_CONTRACTION
+   Reactome                 REACTOME_VOLTAGE_GATED_POTASSIUM_CHANNELS
+      GO_BP                     GOBP_REGULATION_OF_MEMBRANE_POTENTIAL
+   Reactome                                REACTOME_SIGNALING_BY_GPCR
+      GO_BP GOBP_REGULATION_OF_MONOATOMIC_ION_TRANSMEMBRANE_TRANSPORT
+      GO_BP                        GOBP_TRANSMISSION_OF_NERVE_IMPULSE
+ NES_DESeq2 NES_edgeR  padj_DESeq2   padj_edgeR
+   1.794690  1.754563 0.0001876091 0.0003173598
+   1.948839  1.967525 0.0002293283 0.0003549937
+   1.904819  1.915753 0.0002392678 0.0004868092
+   1.677698  1.690414 0.0005178620 0.0002506677
+   1.729553  1.708356 0.0006945361 0.0014821559
+   2.031825  2.129759 0.0016328836 0.0002339665
+   1.608897  1.582807 0.0008816338 0.0020318950
+   1.579417  1.517599 0.0001726068 0.0020428178
+   1.732833  1.698508 0.0011534347 0.0024062229
+   2.031766  1.990275 0.0015123605 0.0027146564

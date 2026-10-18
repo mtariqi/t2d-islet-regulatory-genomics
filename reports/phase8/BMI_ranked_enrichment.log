@@ -1,0 +1,19 @@
+Enrichment model: BMI_sensitivity 
+Input: results/expression/GSE221156/BMI_sensitivity_DESeq2_edgeR.tsv 
+Output: results/enrichment/GSE221156/BMI_sensitivity 
+
+Running: GO_BP DESeq2 Ranked genes: 17352 
+Tested pathways: 3558 FDR < 0.05: 476 
+
+Running: GO_BP edgeR Ranked genes: 17352 
+Tested pathways: 3558 FDR < 0.05: 444 
+
+Running: Reactome DESeq2 Ranked genes: 17352 
+Tested pathways: 1040 FDR < 0.05: 351 
+
+Running: Reactome edgeR Ranked genes: 17352 
+Tested pathways: 1040 FDR < 0.05: 352 
+Consensus GO_BP : 414 
+Consensus Reactome : 336 
+
+Phase 8 enrichment completed for: BMI_sensitivity 

@@ -1,0 +1,68 @@
+
+=== LEADING-EDGE SUMMARY ===
+                                                         pathway core285
+                                           GOBP_ACTION_POTENTIAL       4
+                                           GOBP_SYNAPSE_ASSEMBLY       9
+ REACTOME_AEROBIC_RESPIRATION_AND_RESPIRATORY_ELECTRON_TRANSPORT       2
+                                     REACTOME_POTASSIUM_CHANNELS       5
+                                            REACTOME_TRANSLATION       0
+                       REACTOME_VOLTAGE_GATED_POTASSIUM_CHANNELS       4
+ strict_LODO_supported leading_edge_genes
+                     4                 39
+                     9                 67
+                     2                138
+                     5                 27
+                     0                164
+                     4                 13
+
+=== CORE GENES IN SELECTED PATHWAYS ===
+                                                         pathway gene_symbol
+                                           GOBP_SYNAPSE_ASSEMBLY       ELFN1
+                                           GOBP_SYNAPSE_ASSEMBLY       LSAMP
+                                           GOBP_SYNAPSE_ASSEMBLY       CNTN5
+                                           GOBP_SYNAPSE_ASSEMBLY       GAP43
+                                           GOBP_SYNAPSE_ASSEMBLY       DSCAM
+                                           GOBP_SYNAPSE_ASSEMBLY       EFNA5
+                                           GOBP_SYNAPSE_ASSEMBLY       NTRK2
+                                           GOBP_SYNAPSE_ASSEMBLY     SYNDIG1
+                                           GOBP_SYNAPSE_ASSEMBLY      ADGRB3
+                                           GOBP_ACTION_POTENTIAL       SCN3A
+                                           GOBP_ACTION_POTENTIAL       NTRK2
+                                           GOBP_ACTION_POTENTIAL       KCNA1
+                                           GOBP_ACTION_POTENTIAL       KCNJ2
+ REACTOME_AEROBIC_RESPIRATION_AND_RESPIRATORY_ELECTRON_TRANSPORT        GOT1
+ REACTOME_AEROBIC_RESPIRATION_AND_RESPIRATORY_ELECTRON_TRANSPORT        COA3
+                                     REACTOME_POTASSIUM_CHANNELS      KCNAB2
+                                     REACTOME_POTASSIUM_CHANNELS      KCNAB1
+                                     REACTOME_POTASSIUM_CHANNELS       KCNA1
+                                     REACTOME_POTASSIUM_CHANNELS       KCNJ2
+                                     REACTOME_POTASSIUM_CHANNELS       KCNH8
+                       REACTOME_VOLTAGE_GATED_POTASSIUM_CHANNELS      KCNAB2
+                       REACTOME_VOLTAGE_GATED_POTASSIUM_CHANNELS      KCNAB1
+                       REACTOME_VOLTAGE_GATED_POTASSIUM_CHANNELS       KCNA1
+                       REACTOME_VOLTAGE_GATED_POTASSIUM_CHANNELS       KCNH8
+ DESeq2_log2FC DESeq2_FDR_no_independent_filter strict_LODO_supported
+     4.1074351                     4.707907e-12                  TRUE
+     0.8458306                     4.262345e-07                  TRUE
+     1.0926615                     2.477835e-06                  TRUE
+     1.3267597                     4.627269e-06                  TRUE
+     1.0318912                     7.733689e-06                  TRUE
+     0.3794018                     3.968657e-05                  TRUE
+     1.4232203                     1.335159e-04                  TRUE
+     2.3540380                     9.795827e-04                  TRUE
+     1.5147145                     1.758016e-03                  TRUE
+     0.8751982                     1.300350e-04                  TRUE
+     1.4232203                     1.335159e-04                  TRUE
+     1.7190712                     5.162447e-04                  TRUE
+     0.9857143                     8.030738e-04                  TRUE
+    -0.6198765                     6.245303e-06                  TRUE
+    -0.4399277                     1.629801e-03                  TRUE
+     1.0948068                     3.205709e-10                  TRUE
+     1.3943531                     6.735309e-06                  TRUE
+     1.7190712                     5.162447e-04                  TRUE
+     0.9857143                     8.030738e-04                  TRUE
+     1.4163455                     7.508834e-03                  TRUE
+     1.0948068                     3.205709e-10                  TRUE
+     1.3943531                     6.735309e-06                  TRUE
+     1.7190712                     5.162447e-04                  TRUE
+     1.4163455                     7.508834e-03                  TRUE

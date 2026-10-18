@@ -1,0 +1,19 @@
+Enrichment model: V3_only 
+Input: results/expression/GSE221156/V3_only_DESeq2_edgeR.tsv 
+Output: results/enrichment/GSE221156/V3_only 
+
+Running: GO_BP DESeq2 Ranked genes: 17346 
+Tested pathways: 3546 FDR < 0.05: 192 
+
+Running: GO_BP edgeR Ranked genes: 17346 
+Tested pathways: 3546 FDR < 0.05: 230 
+
+Running: Reactome DESeq2 Ranked genes: 17346 
+Tested pathways: 1036 FDR < 0.05: 157 
+
+Running: Reactome edgeR Ranked genes: 17346 
+Tested pathways: 1036 FDR < 0.05: 166 
+Consensus GO_BP : 183 
+Consensus Reactome : 146 
+
+Phase 8 enrichment completed for: V3_only 

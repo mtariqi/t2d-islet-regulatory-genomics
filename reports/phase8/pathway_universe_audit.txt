@@ -1,0 +1,34 @@
+=== PHASE 8 EFFECTIVE PATHWAY UNIVERSE ===
+
+GO_BP_DESeq2 
+  Pathways reported: 3558 
+  Unique pathways: 3558 
+  Valid pathway tests: 3558 
+  Significant pathways: 435 
+  Negative significant: 333 
+  Positive significant: 102 
+
+GO_BP_edgeR 
+  Pathways reported: 3558 
+  Unique pathways: 3558 
+  Valid pathway tests: 3558 
+  Significant pathways: 413 
+  Negative significant: 331 
+  Positive significant: 82 
+
+Reactome_DESeq2 
+  Pathways reported: 1040 
+  Unique pathways: 1040 
+  Valid pathway tests: 1040 
+  Significant pathways: 314 
+  Negative significant: 295 
+  Positive significant: 19 
+
+Reactome_edgeR 
+  Pathways reported: 1040 
+  Unique pathways: 1040 
+  Valid pathway tests: 1040 
+  Significant pathways: 305 
+  Negative significant: 295 
+  Positive significant: 10 
+

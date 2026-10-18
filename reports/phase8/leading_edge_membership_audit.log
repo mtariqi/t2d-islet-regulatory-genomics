@@ -1,0 +1,10 @@
+=== LEADING-EDGE MEMBERSHIP AUDIT ===
+Pathways: 38 
+Original leading-edge matches: 38 / 38 
+Pathways found in MSigDB: 38 / 38 
+Pathways with nonmember genes: 0 
+
+Problematic pathways:
+[1] pathway          leading_edge_n   original_matches pathway_found   
+[5] nonmember_n     
+<0 rows> (or 0-length row.names)

@@ -1,0 +1,32 @@
+
+=== PROTEASOME SENSITIVITY AUDIT ===
+
+Model: primary 
+Genes matched: 29 /29
+Negative in both methods: 29 /29
+Significant in both methods: 2 /29
+Median DESeq2 log2FC: -0.1822359 
+Median edgeR log2FC: -0.1809141 
+
+Model: BMI 
+Genes matched: 29 /29
+Negative in both methods: 29 /29
+Significant in both methods: 0 /29
+Median DESeq2 log2FC: -0.1805839 
+Median edgeR log2FC: -0.1801634 
+
+Model: V3 
+Genes matched: 29 /29
+Negative in both methods: 28 /29
+Significant in both methods: 0 /29
+Median DESeq2 log2FC: -0.08205364 
+Median edgeR log2FC: -0.08767476 
+
+=== CROSS-MODEL STABILITY ===
+Genes negative in both methods across all models: 28 /29
+
+Genes not consistently negative:
+         gene_id negative_all_models gene_symbol
+ ENSG00000100567               FALSE       PSMA3
+
+Sensitivity audit completed.

@@ -1,0 +1,67 @@
+GO_BP: 383consensus pathways -> 229overlap clusters
+Reactome: 293consensus pathways -> 104overlap clusters
+
+Top 20 representative pathways:
+ collection
+   Reactome
+   Reactome
+   Reactome
+   Reactome
+   Reactome
+   Reactome
+      GO_BP
+      GO_BP
+      GO_BP
+   Reactome
+      GO_BP
+      GO_BP
+   Reactome
+   Reactome
+      GO_BP
+   Reactome
+      GO_BP
+      GO_BP
+   Reactome
+   Reactome
+                                                                pathway
+                                                   REACTOME_TRANSLATION
+                                                       REACTOME_M_PHASE
+        REACTOME_AEROBIC_RESPIRATION_AND_RESPIRATORY_ELECTRON_TRANSPORT
+                                                 REACTOME_HIV_INFECTION
+                             REACTOME_ER_TO_GOLGI_ANTEROGRADE_TRANSPORT
+                              REACTOME_UB_SPECIFIC_PROCESSING_PROTEASES
+                    GOBP_GENERATION_OF_PRECURSOR_METABOLITES_AND_ENERGY
+                                  GOBP_SMALL_MOLECULE_CATABOLIC_PROCESS
+                         GOBP_NUCLEOSIDE_PHOSPHATE_BIOSYNTHETIC_PROCESS
+                     REACTOME_METABOLISM_OF_AMINO_ACIDS_AND_DERIVATIVES
+ GOBP_PROTEASOME_MEDIATED_UBIQUITIN_DEPENDENT_PROTEIN_CATABOLIC_PROCESS
+                                           GOBP_GOLGI_VESICLE_TRANSPORT
+                             REACTOME_MITOCHONDRIAL_PROTEIN_DEGRADATION
+                                          REACTOME_PROTEIN_LOCALIZATION
+                              GOBP_RIBONUCLEOPROTEIN_COMPLEX_BIOGENESIS
+                                          REACTOME_RHO_GTPASE_EFFECTORS
+         GOBP_ENDOPLASMIC_RETICULUM_TO_GOLGI_VESICLE_MEDIATED_TRANSPORT
+                               GOBP_SMALL_MOLECULE_BIOSYNTHETIC_PROCESS
+                                                REACTOME_HCMV_INFECTION
+                                     REACTOME_MITOCHONDRIAL_TRANSLATION
+  cluster_id    worst_FDR
+  Reactome_1 2.221314e-18
+  Reactome_2 6.558111e-13
+  Reactome_3 3.883420e-11
+  Reactome_4 2.568376e-10
+  Reactome_5 4.617886e-10
+  Reactome_6 5.945199e-10
+     GO_BP_1 6.090277e-10
+     GO_BP_2 6.090277e-10
+     GO_BP_3 7.189015e-10
+  Reactome_7 9.298453e-10
+     GO_BP_4 1.351680e-09
+     GO_BP_5 2.895658e-09
+  Reactome_8 2.990148e-09
+  Reactome_9 7.360836e-09
+     GO_BP_6 1.021268e-08
+ Reactome_10 3.094565e-08
+     GO_BP_7 7.985055e-08
+     GO_BP_8 7.988868e-08
+ Reactome_11 1.637817e-07
+ Reactome_12 2.093932e-07

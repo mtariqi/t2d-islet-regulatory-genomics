@@ -1,0 +1,38 @@
+=== CROSS-MODEL ENRICHMENT ROBUSTNESS ===
+
+GO_BP
+Primary consensus: 383 
+Primary retained in BMI: 319 
+Primary retained in V3: 148 
+Significant in all three: 124 
+Primary pathways with stable NES direction: 379 
+
+Reactome
+Primary consensus: 293 
+Primary retained in BMI: 277 
+Primary retained in V3: 134 
+Significant in all three: 130 
+Primary pathways with stable NES direction: 291 
+
+=== PROTEASOME-ASSOCIATED CLUSTER ===
+
+Model: primary 
+Significant in both methods: 38 /38
+Negative NES in both methods: 38 /38
+Median DESeq2 NES: -2.272683 
+Median edgeR NES: -2.371101 
+
+Model: BMI_sensitivity 
+Significant in both methods: 36 /38
+Negative NES in both methods: 38 /38
+Median DESeq2 NES: -2.191464 
+Median edgeR NES: -2.208056 
+
+Model: V3_only 
+Significant in both methods: 19 /38
+Negative NES in both methods: 37 /38
+Median DESeq2 NES: -1.643243 
+Median edgeR NES: -1.674563 
+
+Saved: results/enrichment/GSE221156/cross_model_pathway_robustness.tsv 
+Cross-model comparison completed.
