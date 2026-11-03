@@ -24,6 +24,9 @@ This repository implements an audited donor-level analysis of public human beta-
 
 The badges above are descriptive project labels, not automated checks. No CI, coverage, license, DOI for this repository, container, or workflow-engine certification is claimed.
 
+
+![Uploading image.png…]()
+
 ## Contents
 
 - [Research objective and rationale](#research-objective-and-rationale)
