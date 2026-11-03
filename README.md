@@ -12,6 +12,9 @@
 [![Beta cells](https://img.shields.io/badge/Beta_cells-99%2C029-008080)](#dataset-and-provenance)
 [![Core genes](https://img.shields.io/badge/Sensitivity_supported_genes-285-008080)](#current-results)
 [![Study DOI](https://img.shields.io/badge/Source_DOI-10.1038%2Fs44318--026--00744--w-blue)](https://doi.org/10.1038/s44318-026-00744-w)
+<img width="1280" height="353" alt="image" src="https://github.com/user-attachments/assets/754195db-ecd0-425c-8d02-ccbccd579ab7" />
+
+
 
 **Integrating T2D genetics and human islet functional genomics to prioritize beta-cell regulatory mechanisms.**
 
@@ -24,8 +27,6 @@ This repository implements an audited donor-level analysis of public human beta-
 
 The badges above are descriptive project labels, not automated checks. No CI, coverage, license, DOI for this repository, container, or workflow-engine certification is claimed.
 
-
-![Uploading image.png…]()
 
 ## Contents
 
