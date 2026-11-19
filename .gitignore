@@ -22,3 +22,12 @@ work/
 *.cram
 *.h5ad
 *.h5
+
+# Generated outputs
+logs/
+figures/manuscript/
+
+# Drafts and previews (not part of the code release)
+Manuscript/
+*.docx
+banner*_preview.png
