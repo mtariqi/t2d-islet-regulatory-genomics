@@ -70,11 +70,12 @@ The current analysis supplies a reproducible expression-evidence layer for that 
 |---|---|---|---|
 | H1 | A subset of donor-level beta-cell transcripts differs between T2D and ND after adjusting for measured covariates. | Adjusted DESeq2 and edgeR tests; BH FDR below 0.05. | Evaluated; associated genes identified. |
 | H2 | A subset retains effect direction and statistical support across methods, BMI adjustment, and V3 restriction. | Intersect per-analysis consensus sets; compare effects on common genes. | Evaluated; 285 sensitivity-supported genes. |
-| H3 | Technical factors associated with chemistry contribute to donor expression structure. | PCA/UMAP annotated by chemistry; adjusted modeling and V3 sensitivity. | Chemistry-associated structure observed; a causal technical effect has not been isolated. |
+| H3 | Technical factors associated with chemistry contribute to donor expression structure. | PCA/UMAP annotated by chemistry; adjusted modeling and V3 sensitivity. | Chemistry-associated structure observed; a causal technical effect has not been isolated. Disease × chemistry interaction test planned. |
 | H4 | Some expression candidates will also have compatible T2D GWAS, islet eQTL, and chromatin evidence. | Harmonized, signal-aware colocalization and regulatory annotation. | Planned. |
-| H5 | Prioritized candidates will reproduce in an independent cohort and respond to targeted perturbation in a suitable model. | Independent expression replication and controlled functional experiments. | Planned. |
+| H5 | Prioritized candidates will reproduce in an independent cohort and respond to targeted perturbation in a suitable model. | Independent expression replication and controlled functional experiments. | Replication pre-registered (tag `prereg-validation-v1`); not yet run. Functional experiments planned. |
+| H6 | Robust T2D-associated genes converge on coherent biological pathways. | Ranked fgsea (Reactome, GO BP) across three models; redundancy clustering; leading-edge analysis. | Evaluated; excitability and potassium-channel genes higher in T2D; a 29-gene proteasome–ubiquitin module lower in T2D (small, chemistry-sensitive effect). |
 
-For H1, the per-gene statistical null is no disease-associated expression effect conditional on the fitted covariates. H2 is a descriptive sensitivity assessment, not a separate calibrated joint hypothesis test. H4 and H5 remain untested.
+For H1, the per-gene statistical null is no disease-associated expression effect conditional on the fitted covariates. H2 is a descriptive sensitivity assessment, not a separate calibrated joint hypothesis test. H6 is exploratory; the proteasome–ubiquitin module was selected from discovery data and is tested prospectively under H5. H4 remains untested.
 
 ## Research questions
 
