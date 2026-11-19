@@ -1,3 +1,17 @@
+# ==============================================================================
+# Project:      T2D Islet Regulatory Genomics: donor-level beta-cell transcriptomics in type 2 diabetes
+# Script:       scripts/enrichment/audit_phase8.R
+# Description:  Audit Phase 8 enrichment outputs for completeness and internal consistency.
+#
+# Author:       Md Tariqul Islam
+# Affiliation:  Northeastern University
+# ORCID:        https://orcid.org/0009-0009-6545-8040
+# Repository:   https://github.com/mtariqi/t2d-islet-regulatory-genomics
+# License:      See LICENSE in the repository root
+# Citation:     See CITATION.cff in the repository root
+# Version:      Tracked in git; cite the tagged release used for analysis
+# ==============================================================================
+
 x <- read.delim(
   "results/enrichment/GSE221156/pathway_method_consensus.tsv"
 )

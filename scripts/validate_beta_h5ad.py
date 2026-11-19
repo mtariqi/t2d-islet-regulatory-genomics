@@ -1,4 +1,18 @@
 #!/usr/bin/env python3
+# ==============================================================================
+# Project:      T2D Islet Regulatory Genomics: donor-level beta-cell transcriptomics in type 2 diabetes
+# Script:       scripts/validate_beta_h5ad.py
+# Description:  Validate raw/X as integer, non-negative counts and check cell, feature and donor metadata.
+#
+# Author:       Md Tariqul Islam
+# Affiliation:  Northeastern University
+# ORCID:        https://orcid.org/0009-0009-6545-8040
+# Repository:   https://github.com/mtariqi/t2d-islet-regulatory-genomics
+# License:      See LICENSE in the repository root
+# Citation:     See CITATION.cff in the repository root
+# Version:      Tracked in git; cite the tagged release used for analysis
+# ==============================================================================
+
 import csv
 import json
 from collections import Counter, defaultdict

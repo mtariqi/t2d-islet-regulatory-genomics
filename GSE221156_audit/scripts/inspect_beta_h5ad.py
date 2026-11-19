@@ -1,4 +1,18 @@
 #!/usr/bin/env python3
+# ==============================================================================
+# Project:      T2D Islet Regulatory Genomics: donor-level beta-cell transcriptomics in type 2 diabetes
+# Script:       GSE221156_audit/scripts/inspect_beta_h5ad.py
+# Description:  Inspect the CELLxGENE beta-cell H5AD: matrix encodings, shapes and metadata fields.
+#
+# Author:       Md Tariqul Islam
+# Affiliation:  Northeastern University
+# ORCID:        https://orcid.org/0009-0009-6545-8040
+# Repository:   https://github.com/mtariqi/t2d-islet-regulatory-genomics
+# License:      See LICENSE in the repository root
+# Citation:     See CITATION.cff in the repository root
+# Version:      Tracked in git; cite the tagged release used for analysis
+# ==============================================================================
+
 """Inspect H5AD metadata and matrix layout without loading expression into memory.
 Requires h5py. Does not certify integer counts or infer donor assignments.
 """

@@ -1,4 +1,18 @@
 #!/usr/bin/env python3
+# ==============================================================================
+# Project:      T2D Islet Regulatory Genomics: donor-level beta-cell transcriptomics in type 2 diabetes
+# Script:       GSE221156_audit/scripts/audit_gse221156.py
+# Description:  Audit GEO GSE221156 records: libraries, donors, pooled-library mappings and supplementary files.
+#
+# Author:       Md Tariqul Islam
+# Affiliation:  Northeastern University
+# ORCID:        https://orcid.org/0009-0009-6545-8040
+# Repository:   https://github.com/mtariqi/t2d-islet-regulatory-genomics
+# License:      See LICENSE in the repository root
+# Citation:     See CITATION.cff in the repository root
+# Version:      Tracked in git; cite the tagged release used for analysis
+# ==============================================================================
+
 """Audit saved GEO records. Does not download expression data or infer cell donors."""
 import argparse
 import csv

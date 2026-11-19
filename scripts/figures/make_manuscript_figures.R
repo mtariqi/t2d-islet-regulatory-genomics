@@ -1,4 +1,18 @@
 #!/usr/bin/env Rscript
+# ==============================================================================
+# Project:      T2D Islet Regulatory Genomics: donor-level beta-cell transcriptomics in type 2 diabetes
+# Script:       scripts/figures/make_manuscript_figures.R
+# Description:  Data-driven manuscript figures: volcano, donor expression, module heatmap and scores, PCA.
+#
+# Author:       Md Tariqul Islam
+# Affiliation:  Northeastern University
+# ORCID:        https://orcid.org/0009-0009-6545-8040
+# Repository:   https://github.com/mtariqi/t2d-islet-regulatory-genomics
+# License:      See LICENSE in the repository root
+# Citation:     See CITATION.cff in the repository root
+# Version:      Tracked in git; cite the tagged release used for analysis
+# ==============================================================================
+
 # Data-driven manuscript figures for t2d-islet-regulatory-genomics.
 # Run from the repository root:
 #   Rscript scripts/figures/make_manuscript_figures.R 2>&1 | tee logs/manuscript_figures.log

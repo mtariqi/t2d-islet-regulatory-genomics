@@ -1,3 +1,17 @@
+# ==============================================================================
+# Project:      T2D Islet Regulatory Genomics: donor-level beta-cell transcriptomics in type 2 diabetes
+# Script:       scripts/summarize_beta_robustness.R
+# Description:  Cross-model robustness summary and the 285-gene core set across six method-model combinations.
+#
+# Author:       Md Tariqul Islam
+# Affiliation:  Northeastern University
+# ORCID:        https://orcid.org/0009-0009-6545-8040
+# Repository:   https://github.com/mtariqi/t2d-islet-regulatory-genomics
+# License:      See LICENSE in the repository root
+# Citation:     See CITATION.cff in the repository root
+# Version:      Tracked in git; cite the tagged release used for analysis
+# ==============================================================================
+
 input <- "results/expression/GSE221156"
 output <- file.path(input, "robustness")
 dir.create(output, recursive = TRUE, showWarnings = FALSE)

@@ -1,3 +1,17 @@
+# ==============================================================================
+# Project:      T2D Islet Regulatory Genomics: donor-level beta-cell transcriptomics in type 2 diabetes
+# Script:       scripts/compare_beta_DE_methods.R
+# Description:  Differential expression (T2D vs ND) with DESeq2 and robust edgeR quasi-likelihood; method comparison.
+#
+# Author:       Md Tariqul Islam
+# Affiliation:  Northeastern University
+# ORCID:        https://orcid.org/0009-0009-6545-8040
+# Repository:   https://github.com/mtariqi/t2d-islet-regulatory-genomics
+# License:      See LICENSE in the repository root
+# Citation:     See CITATION.cff in the repository root
+# Version:      Tracked in git; cite the tagged release used for analysis
+# ==============================================================================
+
 suppressPackageStartupMessages(library(DESeq2))
 suppressPackageStartupMessages(library(edgeR))
 

@@ -1,3 +1,17 @@
+# ==============================================================================
+# Project:      T2D Islet Regulatory Genomics: donor-level beta-cell transcriptomics in type 2 diabetes
+# Script:       scripts/enrichment/characterize_shared_reactome_genes.R
+# Description:  Derive the 29-gene proteasome-ubiquitin module from the Reactome.negative_18 leading edges.
+#
+# Author:       Md Tariqul Islam
+# Affiliation:  Northeastern University
+# ORCID:        https://orcid.org/0009-0009-6545-8040
+# Repository:   https://github.com/mtariqi/t2d-islet-regulatory-genomics
+# License:      See LICENSE in the repository root
+# Citation:     See CITATION.cff in the repository root
+# Version:      Tracked in git; cite the tagged release used for analysis
+# ==============================================================================
+
 base <- "results/enrichment/GSE221156"
 
 x <- read.delim(
