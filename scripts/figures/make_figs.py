@@ -89,8 +89,8 @@ a.legend(frameon=False, fontsize=6.6, loc="lower right", bbox_to_anchor=(1.0,1.0
 label(a,"A",x=-0.28,y=1.1)
 a.text(1.0,-0.3,"Right of bars: DESeq2-only / edgeR-only",transform=a.transAxes,ha="right",fontsize=6.2,color="#555")
 
-steps=["Primary,\nboth methods","+ BMI-adjusted","+ V3 only\n(core genes)","+ strict LODO"]
-vals=[913,611,285,None]
+steps=["Primary,\nboth methods","+ BMI-adjusted","+ V3 only\n(core genes)","+ significant in all\n34 LODO refits"]
+vals=[913,611,285,270]
 yy=np.arange(4)[::-1]
 for yi,s,v in zip(yy,steps,vals):
     if v is None:
