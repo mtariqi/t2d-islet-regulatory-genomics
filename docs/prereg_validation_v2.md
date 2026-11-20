@@ -25,3 +25,12 @@ Secondary: per-gene direction agreement with discovery, reported descriptively.
 - Directionally consistent, not replicated: pooled effect positive, CI includes 0.
 - Not replicated: pooled effect negative or near 0; reported prominently.
 Platform differences (Smart-seq2 vs 10x) are noted; a null result does not prove absence of effect.
+
+## Addendum (before any GSE153855 expression was examined)
+Cell annotation inspected only (donor, disease, cell type counts). Beta cells per donor: 9-100.
+The discovery 50-cell minimum is not used for Smart-seq2 data.
+- Primary: donors with >= 10 annotated beta cells (excludes Sample107; 6 ND vs 4 T2D).
+- Sensitivity 1: >= 20 beta cells (5 ND vs 3 T2D).
+- Sensitivity 2: all 11 donors.
+Cells are linked to annotation by column position (no cell IDs in either file);
+the script checks that matrix columns equal annotation rows before use.
