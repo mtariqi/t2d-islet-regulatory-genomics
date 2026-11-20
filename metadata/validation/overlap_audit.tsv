@@ -1,3 +1,4 @@
 cohort	institution	country	pubmed_ids	donor_characteristics_in_GEO	shared_donor_ids	overlap_judgement
 GSE221156	The Jackson Laboratory	USA	see source study	yes	not applicable	discovery cohort
 GSE153855	Karolinska Institutet	Sweden	35482056;39919147	disease state only	none (Donor101-111 vs GSE221156 IDs)	different institutions and procurement networks; overlap very unlikely; covariate matching not possible
+E-MTAB-5061	Karolinska Institutet (Sandberg lab); donors from Prodo Laboratories (USA) per Martinez-Lopez 2025	Sweden (lab) / USA (donors)	27667667	age, sex, BMI	none (H1-H6, T2D1-T2D4)	distinct donor source from GSE153855 (Nordic Network) and from GSE221156 (IIDP); see config/validation_independence.txt
