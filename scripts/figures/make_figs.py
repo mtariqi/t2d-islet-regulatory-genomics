@@ -1,3 +1,22 @@
+#!/usr/bin/env python3
+# ==============================================================================
+# Project:      T2D Islet Regulatory Genomics: donor-level beta-cell transcriptomics in type 2 diabetes
+# Script:       scripts/figures/make_figs.py
+# Description:  Manuscript summary figures (study design, robustness funnel, pathway genes, module summary).
+#
+# Author:       Md Tariqul Islam
+# Affiliation:  Northeastern University
+# ORCID:        https://orcid.org/0009-0009-6545-8040
+# Repository:   https://github.com/mtariqi/t2d-islet-regulatory-genomics
+# License:      See LICENSE in the repository root
+# Citation:     See CITATION.cff in the repository root
+# Version:      Tracked in git; cite the tagged release used for analysis
+# ==============================================================================
+#
+# Run from figures/manuscript/:
+#   python3 ../../scripts/figures/make_figs.py
+# Writes Figure1, Figure3, Figure4A and Figure5A as PNG (300 dpi), PDF and TIFF.
+
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -39,11 +58,11 @@ box(68,40,30,26,"Three models","Primary (34 donors)\nBMI-adjusted (34)\nV3 only 
 box(36,40,28,26,"Two methods","DESeq2 (Wald)\nedgeR robust QL\nsame genes per model\nFDR < 0.05")
 box(2,40,30,26,"Robustness","913 jointly significant\n285 core genes\n(6/6 combinations)\nleave-one-donor-out")
 box(2,6,46,26,"Pathways","Ranked fgsea (Reactome, GO BP)\nredundancy clustering\nexcitability program (up)\nproteasome\u2013ubiquitin module (down)")
-box(52,6,46,26,"Pre-registered replication","frozen 29-gene module + full pathway\ndecision rules, tag prereg-validation-v1\nindependent donor cohorts\n(not yet analysed)",fc="#FFFFFF",ec="#9AA7BD",ls="--")
+box(52,6,46,26,"Pre-registered replication","GSE153855 + E-MTAB-5061 (Smart-seq2)\nfrozen gene sets, tags v1 and v2\nrandom-effects pooling\ncore, K-channel replicated; module not")
 arrow(32.8,85,35.2,85); arrow(64.8,85,67.2,85)
 arrow(83,73.2,83,67.2)
 arrow(67.2,53,64.8,53); arrow(35.2,53,32.8,53)
-arrow(17,39.2,17,33.2); arrow(48.8,19,51.2,19,ls="--")
+arrow(17,39.2,17,33.2); arrow(48.8,19,51.2,19)
 
 axB = fig.add_axes([0.74, 0.14, 0.25, 0.72])
 label(axB, "B", x=-0.32, y=1.02)
@@ -75,16 +94,16 @@ a.legend(frameon=False, fontsize=6.6, loc="lower right", bbox_to_anchor=(1.0,1.0
 label(a,"A",x=-0.28,y=1.1)
 a.text(1.0,-0.3,"Right of bars: DESeq2-only / edgeR-only",transform=a.transAxes,ha="right",fontsize=6.2,color="#555")
 
-steps=["Primary,\nboth methods","+ BMI-adjusted","+ V3 only\n(core genes)","+ strict LODO"]
-vals=[913,611,285,None]
+steps=["Primary,\nboth methods","+ BMI-adjusted","+ V3 only\n(core genes)","+ significant in all\n34 LODO refits"]
+vals=[913,611,285,270]
 yy=np.arange(4)[::-1]
 for yi,s,v in zip(yy,steps,vals):
     if v is None:
         b.barh(yi, 285, color="none", edgecolor="#888", ls="--", lw=0.8, height=0.6)
         b.text(142,yi,"pending",ha="center",va="center",fontsize=6.8,color="#666",style="italic")
     else:
-        b.barh(yi, v, color=T2D if v==285 else "#B9C3D3", height=0.6)
-        b.text(v+12,yi,f"{v:,}",va="center",fontsize=7.4,fontweight="bold" if v==285 else "normal")
+        b.barh(yi, v, color=T2D if v==270 else "#B9C3D3", height=0.6)
+        b.text(v+12,yi,f"{v:,}",va="center",fontsize=7.4,fontweight="bold" if v==270 else "normal")
 b.set_yticks(yy); b.set_yticklabels(steps, fontsize=7); b.set_xlabel("Jointly significant genes, same direction"); b.set_xlim(0,1050)
 b.text(1.0,-0.3,"Primary and V3-only overlap: 322 genes",transform=b.transAxes,ha="right",fontsize=6.2,color="#555")
 label(b,"B",x=-0.36,y=1.1)
