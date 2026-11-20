@@ -36,14 +36,15 @@ d$kind <- ifelse(d$donor_set == "primary_min10", "primary", "sensitivity")
 d$order <- match(d$donor_set, names(set_lab))
 keep <- c("cohort", "score", "estimate_T2D_minus_ND", "ci_low", "ci_high", "row_lab", "kind", "order")
 e <- d[, keep]
+e$I2 <- NA_real_
 
 pooled_f <- "results/validation/meta/pooled_scores.tsv"
 if (file.exists(pooled_f)) {
   p <- read.delim(pooled_f)
   e <- rbind(e, data.frame(cohort = "Pooled", score = p$score, estimate_T2D_minus_ND = p$RE_estimate,
                            ci_low = p$RE_ci_low, ci_high = p$RE_ci_high,
-                           row_lab = sprintf("Random effects, %d cohorts\nI\u00b2 = %.0f%%", p$k, p$I2),
-                           kind = "pooled", order = 1))
+                           row_lab = sprintf("Random effects, %d cohorts", p$k),
+                           kind = "pooled", order = 1, I2 = p$I2))
 }
 
 score_lab <- c(core279_direction_aware = "Core 279\n(direction-aware; expected higher)",
@@ -59,6 +60,9 @@ g <- ggplot(e, aes(estimate_T2D_minus_ND, key)) +
   geom_errorbar(aes(xmin = ci_low, xmax = ci_high), orientation = "y", width = 0.2,
                 linewidth = 0.45, colour = "grey30") +
   geom_point(aes(shape = kind, fill = kind), size = 2.6, stroke = 0.4) +
+  geom_label(data = e[e$kind == "pooled", ], fill = "white", label.size = 0, label.padding = unit(0.08, "lines"),
+            aes(x = estimate_T2D_minus_ND, label = sprintf("I^2 == '%.0f%%'", I2)),
+            parse = TRUE, vjust = -1.1, size = 2.3, colour = "grey30") +
   scale_shape_manual(values = c(primary = 21, sensitivity = 21, pooled = 23), guide = "none") +
   scale_fill_manual(values = c(primary = "#D55E00", sensitivity = "white", pooled = "black"), guide = "none") +
   scale_y_discrete(labels = function(x) sub("^[^|]*\\|", "", x)) +
