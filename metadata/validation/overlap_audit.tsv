@@ -1,0 +1,3 @@
+cohort	institution	country	pubmed_ids	donor_characteristics_in_GEO	shared_donor_ids	overlap_judgement
+GSE221156	The Jackson Laboratory	USA	see source study	yes	not applicable	discovery cohort
+GSE153855	Karolinska Institutet	Sweden	35482056;39919147	disease state only	none (Donor101-111 vs GSE221156 IDs)	different institutions and procurement networks; overlap very unlikely; covariate matching not possible
