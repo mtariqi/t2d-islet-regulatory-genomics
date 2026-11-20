@@ -34,3 +34,20 @@ The discovery 50-cell minimum is not used for Smart-seq2 data.
 - Sensitivity 2: all 11 donors.
 Cells are linked to annotation by column position (no cell IDs in either file);
 the script checks that matrix columns equal annotation rows before use.
+
+## Addendum: E-MTAB-5061 (before any expression was examined)
+Written after inspecting the SDRF annotation only; the count file had not finished downloading.
+- Cells: "Characteristics [single cell quality]" == "OK" exactly (authors' final QC; excludes
+  "OK, filtered" and "not OK") and "Characteristics [inferred cell type]" == "beta cell". 270 beta cells.
+- Cells are linked to counts by name (SDRF "Source Name", 3,514 unique). Only the read-count
+  columns of pancreas_refseq_rpkms_counts_3514sc.txt are used; RPKM columns are never summed.
+- Donor threshold: >= 10 beta cells (primary) keeps all 10 donors (6 ND, 4 T2D).
+  The >= 20 set leaves 4 ND vs 1 T2D and is reported descriptively only (not tested).
+- Primary model: score ~ disease + sex + age (age z-scored), as the plan requires where
+  covariates exist. Sensitivity: unadjusted score ~ disease. Age is higher in T2D donors
+  (37-57 vs 22-48), so the adjusted and unadjusted estimates are both reported.
+- Independence from GSE153855: both studies are from Karolinska Institutet. If the GSE153855
+  publications (PubMed 35482056, 39919147) state that their donors are distinct from the
+  E-MTAB-5061 donors (PubMed 27667667), both cohorts enter the pooled random-effects
+  meta-analysis. If they share donors, or this cannot be confirmed, E-MTAB-5061 is reported
+  as a separate cohort and not pooled.
