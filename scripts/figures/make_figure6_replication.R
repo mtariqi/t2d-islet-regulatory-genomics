@@ -2,7 +2,7 @@
 # ==============================================================================
 # Project:      T2D Islet Regulatory Genomics: donor-level beta-cell transcriptomics in type 2 diabetes
 # Script:       scripts/figures/make_figure6_replication.R
-# Description:  Figure 6: forest plot of pre-registered replication scores by cohort and donor set.
+# Description:  Figure 6: forest plot of pre-registered replication scores by cohort, with pooled estimate.
 #
 # Author:       Md Tariqul Islam
 # Affiliation:  Northeastern University
@@ -13,10 +13,10 @@
 # Version:      Tracked in git; cite the tagged release used for analysis
 # ==============================================================================
 #
-# Run from the repository root, after the replication script(s):
+# Run from the repository root, after the replication and meta-analysis scripts:
 #   Rscript scripts/figures/make_figure6_replication.R
-# Reads every results/validation/<cohort>/replication_scores.tsv it finds, so a second
-# cohort is added to the figure automatically once its results exist.
+# Rows: each cohort's primary and sensitivity analyses, then the pre-registered pooled
+# random-effects estimate (results/validation/meta/pooled_scores.tsv) if it exists.
 
 suppressPackageStartupMessages(library(ggplot2))
 
@@ -24,39 +24,58 @@ files <- Sys.glob("results/validation/*/replication_scores.tsv")
 if (!length(files)) stop("No results/validation/*/replication_scores.tsv found", call. = FALSE)
 d <- do.call(rbind, lapply(files, function(f) cbind(cohort = basename(dirname(f)), read.delim(f))))
 
-score_lab <- c(core279_direction_aware = "Core 279\n(direction-aware; expected higher)",
-               kchannel5 = "Potassium channels, 5 genes\n(expected higher)",
-               proteasome29 = "Proteasome module, 29 genes\n(expected lower)")
 set_lab <- c(primary_min10 = "At least 10 beta cells (primary)",
              sens_min20 = "At least 20 beta cells",
              sens_all = "All donors",
              sens_unadjusted = "All donors, unadjusted")
-d$score_f <- factor(score_lab[d$score], levels = score_lab)
-d$label <- sprintf("%d ND / %d T2D", d$n_ND, d$n_T2D)
-# Donor numbers go in the row label, not inside the panel, so they never overlap the intervals
-d$y_lab <- paste0(set_lab[d$donor_set], "\n", d$label)
-lv <- unique(d$y_lab[order(match(d$donor_set, names(set_lab)), decreasing = TRUE)])
-d$set_f <- factor(d$y_lab, levels = lv)
-d$primary <- d$donor_set == "primary_min10"
+d$row_lab <- unname(set_lab[d$donor_set])
+adj <- d$cohort == "E-MTAB-5061" & d$donor_set == "primary_min10"
+d$row_lab[adj] <- "At least 10 beta cells (primary),\nadjusted for sex and age"
+d$row_lab <- paste0(d$row_lab, "\n", sprintf("%d ND / %d T2D", d$n_ND, d$n_T2D))
+d$kind <- ifelse(d$donor_set == "primary_min10", "primary", "sensitivity")
+d$order <- match(d$donor_set, names(set_lab))
+keep <- c("cohort", "score", "estimate_T2D_minus_ND", "ci_low", "ci_high", "row_lab", "kind", "order")
+e <- d[, keep]
 
-p <- ggplot(d, aes(estimate_T2D_minus_ND, set_f)) +
+pooled_f <- "results/validation/meta/pooled_scores.tsv"
+if (file.exists(pooled_f)) {
+  p <- read.delim(pooled_f)
+  e <- rbind(e, data.frame(cohort = "Pooled", score = p$score, estimate_T2D_minus_ND = p$RE_estimate,
+                           ci_low = p$RE_ci_low, ci_high = p$RE_ci_high,
+                           row_lab = sprintf("Random effects, %d cohorts\nI\u00b2 = %.0f%%", p$k, p$I2),
+                           kind = "pooled", order = 1))
+}
+
+score_lab <- c(core279_direction_aware = "Core 279\n(direction-aware; expected higher)",
+               kchannel5 = "Potassium channels, 5 genes\n(expected higher)",
+               proteasome29 = "Proteasome module, 29 genes\n(expected lower)")
+e$score_f <- factor(score_lab[e$score], levels = score_lab)
+e$cohort <- factor(e$cohort, levels = intersect(c("GSE153855", "E-MTAB-5061", "Pooled"), unique(e$cohort)))
+e$key <- paste0(e$cohort, "|", e$row_lab)
+e$key <- factor(e$key, levels = unique(e$key[order(e$order, decreasing = TRUE)]))
+
+g <- ggplot(e, aes(estimate_T2D_minus_ND, key)) +
   geom_vline(xintercept = 0, linewidth = 0.3, linetype = 2, colour = "grey45") +
-  geom_errorbar(aes(xmin = ci_low, xmax = ci_high), orientation = "y", width = 0.18, linewidth = 0.45, colour = "grey30") +
-  geom_point(aes(fill = primary), shape = 21, size = 2.4, stroke = 0.4) +
-  scale_fill_manual(values = c(`TRUE` = "#D55E00", `FALSE` = "white"), guide = "none") +
-  facet_grid(cohort ~ score_f, scales = "free_y") +
+  geom_errorbar(aes(xmin = ci_low, xmax = ci_high), orientation = "y", width = 0.2,
+                linewidth = 0.45, colour = "grey30") +
+  geom_point(aes(shape = kind, fill = kind), size = 2.6, stroke = 0.4) +
+  scale_shape_manual(values = c(primary = 21, sensitivity = 21, pooled = 23), guide = "none") +
+  scale_fill_manual(values = c(primary = "#D55E00", sensitivity = "white", pooled = "black"), guide = "none") +
+  scale_y_discrete(labels = function(x) sub("^[^|]*\\|", "", x)) +
+  facet_grid(cohort ~ score_f, scales = "free_y", space = "free_y") +
   labs(x = "Score difference, T2D minus ND (z units, 95% CI)", y = NULL,
-       caption = "Pre-registered gene sets (tags prereg-validation-v1 and v2). Filled points: primary analysis. GSE153855: unadjusted (no covariates in GEO). E-MTAB-5061: primary adjusted for sex and age.") +
+       caption = "Filled circles: primary analysis. Open circles: sensitivity analyses. Diamonds: pre-registered pooled estimate.") +
   theme_classic(base_size = 8) +
   theme(strip.background = element_blank(), strip.text = element_text(face = "bold"),
-        panel.spacing.x = unit(4, "mm"), axis.line = element_line(linewidth = 0.3),
-        plot.caption = element_text(size = 6, hjust = 0))
+        panel.spacing.x = unit(4, "mm"), panel.spacing.y = unit(3, "mm"),
+        axis.line = element_line(linewidth = 0.3), plot.caption = element_text(size = 6, hjust = 0))
 
 out <- "figures/manuscript/Figure6_replication_forest"
 dir.create(dirname(out), recursive = TRUE, showWarnings = FALSE)
-h <- 30 + 32 * length(unique(d$cohort))
-ggsave(paste0(out, ".pdf"), p, width = 180, height = h, units = "mm")
-ggsave(paste0(out, ".png"), p, width = 180, height = h, units = "mm", dpi = 300)
-ggsave(paste0(out, ".tiff"), p, width = 180, height = h, units = "mm", dpi = 300,
+h <- 30 + 14 * length(unique(e$key))
+ggsave(paste0(out, ".pdf"), g, width = 180, height = h, units = "mm")
+ggsave(paste0(out, ".png"), g, width = 180, height = h, units = "mm", dpi = 300)
+ggsave(paste0(out, ".tiff"), g, width = 180, height = h, units = "mm", dpi = 300,
        device = "tiff", compression = "lzw")
-message("Wrote ", out, ".{pdf,png,tiff} from ", length(files), " cohort(s)")
+message("Wrote ", out, ".{pdf,png,tiff}: ", length(files), " cohort(s)",
+        if (file.exists(pooled_f)) " + pooled estimate" else "")
