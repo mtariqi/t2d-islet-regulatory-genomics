@@ -54,10 +54,13 @@ core <- read.delim("config/gene_sets/core279_strict.tsv")
 kch  <- read.delim("config/gene_sets/kchannel5.tsv")
 
 # ---------------- Annotation (positional link to matrix columns) ----------------
-ann <- read.delim(ann_f, stringsAsFactors = FALSE, strip.white = TRUE)
-ann[] <- lapply(ann, function(x) trimws(gsub("\r", "", x)))
+# The source file ends with one line using CR separators; strip CR before parsing
+# so that line is read as one row (otherwise R splits it into three).
+strip_cr <- function(f) pipe(paste("zcat", shQuote(f), "| tr -d '\\r'"))
+ann <- read.delim(strip_cr(ann_f), stringsAsFactors = FALSE, strip.white = TRUE)
+ann[] <- lapply(ann, trimws)
 stopifnot(identical(names(ann), c("Donor", "Disease", "CellType")))
-first <- readLines(gzfile(mat_f), n = 1)
+first <- readLines(strip_cr(mat_f), n = 1)
 n_fields <- length(strsplit(first, "\t", fixed = TRUE)[[1]])
 cat("Annotated cells:", nrow(ann), "| matrix cell columns:", n_fields - 1, "\n")
 stopifnot("matrix columns must equal annotation rows" = n_fields - 1 == nrow(ann))
@@ -69,7 +72,7 @@ cat("Beta cells:", length(beta), "\n")
 
 # Read only gene names and beta-cell columns
 cls <- rep("NULL", n_fields); cls[1] <- "character"; cls[beta + 1] <- "integer"
-mat <- read.delim(gzfile(mat_f), header = FALSE, colClasses = cls, quote = "")
+mat <- read.delim(strip_cr(mat_f), header = FALSE, colClasses = cls, quote = "")
 genes <- mat[[1]]; mat <- as.matrix(mat[, -1]); storage.mode(mat) <- "double"  # avoid integer overflow in sums
 stopifnot("counts must be non-negative integers" = all(mat >= 0))
 
