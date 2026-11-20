@@ -9,7 +9,7 @@ authors:
     orcid: "https://orcid.org/0009-0009-6545-8040"
 repository-code: "https://github.com/mtariqi/t2d-islet-regulatory-genomics"
 license: MIT
-version: "0.9.0"
+version: "1.0.0"
 keywords:
   - type 2 diabetes
   - beta cell
