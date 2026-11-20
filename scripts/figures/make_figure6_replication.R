@@ -40,7 +40,7 @@ d$primary <- d$donor_set == "primary_min10"
 
 p <- ggplot(d, aes(estimate_T2D_minus_ND, set_f)) +
   geom_vline(xintercept = 0, linewidth = 0.3, linetype = 2, colour = "grey45") +
-  geom_errorbarh(aes(xmin = ci_low, xmax = ci_high), height = 0.18, linewidth = 0.45, colour = "grey30") +
+  geom_errorbar(aes(xmin = ci_low, xmax = ci_high), orientation = "y", width = 0.18, linewidth = 0.45, colour = "grey30") +
   geom_point(aes(fill = primary), shape = 21, size = 2.4, stroke = 0.4) +
   scale_fill_manual(values = c(`TRUE` = "#D55E00", `FALSE` = "white"), guide = "none") +
   facet_grid(cohort ~ score_f, scales = "free_y") +
