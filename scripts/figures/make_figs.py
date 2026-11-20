@@ -1,17 +1,3 @@
-# ==============================================================================
-# Project:      T2D Islet Regulatory Genomics: donor-level beta-cell transcriptomics in type 2 diabetes
-# Script:       scripts/figures/make_figs.py
-# Description:  Manuscript summary figures (study design, robustness funnel, pathway genes, module summary).
-#
-# Author:       Md Tariqul Islam
-# Affiliation:  Northeastern University
-# ORCID:        https://orcid.org/0009-0009-6545-8040
-# Repository:   https://github.com/mtariqi/t2d-islet-regulatory-genomics
-# License:      See LICENSE in the repository root
-# Citation:     See CITATION.cff in the repository root
-# Version:      Tracked in git; cite the tagged release used for analysis
-# ==============================================================================
-
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -89,8 +75,8 @@ a.legend(frameon=False, fontsize=6.6, loc="lower right", bbox_to_anchor=(1.0,1.0
 label(a,"A",x=-0.28,y=1.1)
 a.text(1.0,-0.3,"Right of bars: DESeq2-only / edgeR-only",transform=a.transAxes,ha="right",fontsize=6.2,color="#555")
 
-steps=["Primary,\nboth methods","+ BMI-adjusted","+ V3 only\n(core genes)","+ significant in all\n34 LODO refits"]
-vals=[913,611,285,270]
+steps=["Primary,\nboth methods","+ BMI-adjusted","+ V3 only\n(core genes)","+ strict LODO"]
+vals=[913,611,285,None]
 yy=np.arange(4)[::-1]
 for yi,s,v in zip(yy,steps,vals):
     if v is None:
