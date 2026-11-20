@@ -29,7 +29,8 @@ score_lab <- c(core279_direction_aware = "Core 279\n(direction-aware; expected h
                proteasome29 = "Proteasome module, 29 genes\n(expected lower)")
 set_lab <- c(primary_min10 = "At least 10 beta cells (primary)",
              sens_min20 = "At least 20 beta cells",
-             sens_all = "All donors")
+             sens_all = "All donors",
+             sens_unadjusted = "All donors, unadjusted")
 d$score_f <- factor(score_lab[d$score], levels = score_lab)
 d$label <- sprintf("%d ND / %d T2D", d$n_ND, d$n_T2D)
 # Donor numbers go in the row label, not inside the panel, so they never overlap the intervals
@@ -45,7 +46,7 @@ p <- ggplot(d, aes(estimate_T2D_minus_ND, set_f)) +
   scale_fill_manual(values = c(`TRUE` = "#D55E00", `FALSE` = "white"), guide = "none") +
   facet_grid(cohort ~ score_f, scales = "free_y") +
   labs(x = "Score difference, T2D minus ND (z units, 95% CI)", y = NULL,
-       caption = "Pre-registered gene sets (tags prereg-validation-v1 and v2). Filled points: primary donor set. Unadjusted models.") +
+       caption = "Pre-registered gene sets (tags prereg-validation-v1 and v2). Filled points: primary analysis. GSE153855: unadjusted (no covariates in GEO). E-MTAB-5061: primary adjusted for sex and age.") +
   theme_classic(base_size = 8) +
   theme(strip.background = element_blank(), strip.text = element_text(face = "bold"),
         panel.spacing.x = unit(4, "mm"), axis.line = element_line(linewidth = 0.3),
