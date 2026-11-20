@@ -1,0 +1,3 @@
+INDEPENDENCE_CONFIRMED=TRUE
+# Source: Martinez-Lopez et al. 2025 Nat Commun (doi:10.1038/s41467-025-65060-z), Supplementary Data donor table.
+# GSE153855 = dataset 1 (Nordic Network, Sweden); E-MTAB-5061 = previously published part of dataset 2 (Prodo, USA).
