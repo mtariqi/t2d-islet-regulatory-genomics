@@ -1,0 +1,1 @@
+| 2026-11-19 | v1 full-pathway proteasome comparator not run | The plan did not name a specific Reactome pathway; choosing one after data access would add an undisclosed analytic choice. The frozen 29-gene module remains the v1 primary test. |
