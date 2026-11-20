@@ -58,7 +58,7 @@ box(68,40,30,26,"Three models","Primary (34 donors)\nBMI-adjusted (34)\nV3 only 
 box(36,40,28,26,"Two methods","DESeq2 (Wald)\nedgeR robust QL\nsame genes per model\nFDR < 0.05")
 box(2,40,30,26,"Robustness","913 jointly significant\n285 core genes\n(6/6 combinations)\nleave-one-donor-out")
 box(2,6,46,26,"Pathways","Ranked fgsea (Reactome, GO BP)\nredundancy clustering\nexcitability program (up)\nproteasome\u2013ubiquitin module (down)")
-box(52,6,46,26,"Pre-registered replication","GSE153855 + E-MTAB-5061 (Smart-seq2)\nfrozen gene sets, tags v1 and v2\nrandom-effects pooling\ncore, K-channel replicated; module not")
+box(52,6,46,26,"Pre-registered replication","GSE153855 + E-MTAB-5061 (Smart-seq2)\nfrozen gene sets, tags v1 and v2\nrandom-effects pooling\nK-channel replicated; core at margin;\nproteasome module not replicated")
 arrow(32.8,85,35.2,85); arrow(64.8,85,67.2,85)
 arrow(83,73.2,83,67.2)
 arrow(67.2,53,64.8,53); arrow(35.2,53,32.8,53)
