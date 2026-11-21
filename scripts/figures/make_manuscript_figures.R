@@ -232,7 +232,7 @@ p5b <- ggplot(hm, aes(col, gene, fill = lfc)) +
                        limits = c(-lim, lim), name = "log2 FC") +
   labs(x = NULL, y = NULL, tag = "B", caption = "* FDR < 0.05 in that method and model") +
   theme_pub + theme(axis.text.y = element_text(face = "italic", size = 6),
-                    axis.line = element_blank(), axis.ticks = element_blank(),
+                    axis.text.x = element_text(angle = 35, hjust = 1), axis.line = element_blank(), axis.ticks = element_blank(),
                     plot.caption = element_text(size = 6))
 save_fig(p5b, "Figure5B_proteasome_per_gene_heatmap", 95, 120)
 
